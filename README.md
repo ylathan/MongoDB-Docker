@@ -22,19 +22,19 @@ cat > docker-compose.yml
 -----------------------------------------------------------------------------------------------------------------------------------------
 Paso 2. Crear la configuracion documento de docker-compose.yml:
 
-version: '2.2'      
+version: '2.2'
 
-services:     
+services:
 
-  mongo:      
-    image: mongo:4.0.4      
-    restart: always      
-    container_name: monguito      
-    environment:     
+  mongo:
+    image: mongo:4.0.4
+    restart: always
+    container_name: monguito
+    environment:
       - MONGODB_USER="user"
       - MONGODB_PASS="pass"	
       
-    volumes:      
+    volumes:
       - ./monguitodata:/data/db
       - ./monguitodata/log:/var/log/mongodb/
     ports:
@@ -63,7 +63,8 @@ touch mongo.sh
 ----------------------------------------------------------------------------------------------------------------------
 Paso 4. Cargar comandos al archivo creado:
 
-#Crear carpeta para volumen de mongo
+#Crear carpeta para volumen de mongo.
+
 mkdir monguitodata && cd monguitodata; cd monguitodata || mkdir log
 
 - mkdir monguitodata: Intenta crear un directorio llamado monguitodata.
@@ -74,7 +75,7 @@ mkdir monguitodata && cd monguitodata; cd monguitodata || mkdir log
 
 cd ~
 
-- Cambia al directorio de inicio del usuario (~ representa el directorio de inicio).--
+- Cambia al directorio de inicio del usuario (~ representa el directorio de inicio).
 
 #Iniciar el contenedor:
 sudo docker-compose up -d

@@ -70,7 +70,7 @@ mkdir monguitodata && cd monguitodata; cd monguitodata || mkdir log
 - mkdir monguitodata: Intenta crear un directorio llamado monguitodata.
 - &&: Si la creación del directorio anterior tiene éxito, continúa con la siguiente acción.
 - cd monguitodata: Cambia al directorio recién creado llamado monguitodata.
-- ;  Ejecuta la siguiente acción independientemente del resultado de la acción anterior.
+- ;:  Ejecuta la siguiente acción independientemente del resultado de la acción anterior.
 - cd monguitodata || mkdir log: Intenta cambiar al directorio monguitodata. Si no existe, crea un directorio llamado log.
 
 cd ~

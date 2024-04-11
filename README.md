@@ -5,7 +5,7 @@ Descripción paso por paso
 Notas aclaratorias :
 Vamos a trabajar en Docker-compose y qué es;es una herramienta para ejecutar aplicaciones de múltiples contenedores en Docker definidas mediante el formato de archivo Compose. Un archivo Compose se utiliza para definir cómo se configuran uno o más contenedores que componen su aplicación.
 
-Se creara un documento llamado docker-compose, un documento llamado mongo, se crean carpetas para el volumen llamadas monguitodata y log( esto se aclara porque los nombres los puede elegir el creador a su gusto)
+Se creará un documento llamado docker-compose, un documento llamado mongo, se crean carpetas para el volumen llamadas monguitodata y log( esto se aclara porque los nombres los puede elegir el creador a su gusto)
 
 Uso linux en un entorno virtual(creamos una conexión con virtualbox y ejecutamos los comandos dentro de Putty con la dirección IP proporcionada por el virtualbox).
 
@@ -26,23 +26,31 @@ version: '2.2'
 
 services:     
 
-  mongo:      - nombre del servicio
-    image: mongo:4.0.4      - indica que estamos utilizando la imagen oficial de MongoDB versión 4.0.4.
-    restart: always      - asegura que el contenedor se reinicie automáticamente si se detiene.
-    container_name: monguito      - nombre del cointainer
-    environment:     - entorno, se configura el nombre y contraseña para el usuario raiz
+  mongo:      
+    image: mongo:4.0.4      
+    restart: always      
+    container_name: monguito      
+    environment:     
       - MONGODB_USER="user"
       - MONGODB_PASS="pass"	
       
-    volumes:      - me permite mapear el almacenamiento del contenedor en este caso los dos que contiene--
+    volumes:      
       - ./monguitodata:/data/db
       - ./monguitodata/log:/var/log/mongodb/
     ports:
-      - "27017:27017"     - puerto que permite acceder a la base de datos MongoDB desde fuera del contenedor.
+      - "27017:27017"     
       
-    - version del docker compose
-    - el servico que queremos configurar en este caso mongo
-    
+   Explicación de cada línea   
+- version del docker compose
+- el servico que queremos configurar en este caso mongo
+- nombre del servicio
+- indica que estamos utilizando la imagen oficial de MongoDB versión 4.0.4
+- asegura que el contenedor se reinicie automáticamente si se detiene
+- nombre del cointainer
+- entorno, se configura el nombre y contraseña para el usuario raiz
+- me permite mapear el almacenamiento del contenedor en este caso los dos que contiene
+- puerto que permite acceder a la base de datos MongoDB desde fuera del contenedor.
+  
 En resumen todo este comando crea el contenedor con usuario y contraseña, monta los volumenes locales para los datos y los registros y expone en puerto 27017 para acceder a la base de datos.
 
 ----------------------------------------------------------------------------------------------------------------------

@@ -2,14 +2,14 @@ CREANDO UN CONTENEDOR
 
 Descripción paso por paso
 
-Notas aclaratorias :
-Vamos a trabajar en Docker-compose y qué es;es una herramienta para ejecutar aplicaciones de múltiples contenedores en Docker definidas mediante el formato de archivo Compose. Un archivo Compose se utiliza para definir cómo se configuran uno o más contenedores que componen su aplicación.
+Notas:
+  - Vamos a trabajar en Docker-compose y qué es;es una herramienta para ejecutar aplicaciones de múltiples contenedores en Docker definidas mediante el formato de archivo Compose. Un archivo Compose se utiliza para definir cómo se configuran uno o más contenedores que componen su aplicación.
 
-Se creará un documento llamado docker-compose, un documento llamado mongo, se crean carpetas para el volumen llamadas monguitodata y log( esto se aclara porque los nombres los puede elegir el creador a su gusto)
+- Se creará un documento llamado docker-compose, otro mongo, carpetas para el volumen llamadas monguitodata y log( esto se aclará porque los nombres los puede elegir el creador a su gusto)
 
-Uso linux en un entorno virtual(creamos una conexión con virtualbox y ejecutamos los comandos dentro de Putty con la dirección IP proporcionada por el virtualbox).
+- Uso linux en un entorno virtual(creamos una conexión con virtualbox y ejecutamos los comandos dentro de Putty con la dirección IP proporcionada por el virtualbox).
 
-------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
 Paso 1. Crear documento de docker-compose.
 
 touch docker-compose.yml
@@ -64,6 +64,7 @@ touch mongo.sh
 Paso 4. Cargar comandos al archivo creado:
 
 #Crear carpeta para volumen de mongo.
+
 mkdir monguitodata && cd monguitodata; cd monguitodata || mkdir log
 
 - mkdir monguitodata: Intenta crear un directorio llamado monguitodata.
@@ -77,6 +78,7 @@ cd ~
 - Cambia al directorio de inicio del usuario (~ representa el directorio de inicio).
 
 #Iniciar el contenedor.
+
 sudo docker-compose up -d
 
 - Este comando ejecuta los servicios definidos en el archivo docker-compose.yml utilizando Docker Compose.

@@ -23,29 +23,21 @@ Paso 2. Crear la configuracion documento de docker-compose.yml:
 
 version: '2.2'      - version del docker compose
 
-services:     
-- el servico que queremos configurar en este caso mongo
+services:     - el servico que queremos configurar en este caso mongo
 
-  mongo:      
-- nombre del servicio
-    image: mongo:4.0.4      
-- indica que estamos utilizando la imagen oficial de MongoDB versión 4.0.4.
-    restart: always      
-- asegura que el contenedor se reinicie automáticamente si se detiene.
-    container_name: monguito      
-- nombre del cointainer
-    environment:     
-- entorno, se configura el nombre y contraseña para el usuario raiz
+  mongo:      - nombre del servicio
+    image: mongo:4.0.4      - indica que estamos utilizando la imagen oficial de MongoDB versión 4.0.4.
+    restart: always      - asegura que el contenedor se reinicie automáticamente si se detiene.
+    container_name: monguito      - nombre del cointainer
+    environment:     - entorno, se configura el nombre y contraseña para el usuario raiz
       - MONGODB_USER="user"
       - MONGODB_PASS="pass"	
       
-    volumes:      
-- me permite mapear el almacenamiento del contenedor en este caso los dos que contiene--
+    volumes:      - me permite mapear el almacenamiento del contenedor en este caso los dos que contiene--
       - ./monguitodata:/data/db
       - ./monguitodata/log:/var/log/mongodb/
     ports:
-      - "27017:27017"      
-  - puerto que permite acceder a la base de datos MongoDB desde fuera del contenedor.--
+      - "27017:27017"     - puerto que permite acceder a la base de datos MongoDB desde fuera del contenedor.
       
 En resumen todo este comando crea el contenedor con usuario y contraseña, monta los volumenes locales para los datos y los registros y expone en puerto 27017 para acceder a la base de datos.
 

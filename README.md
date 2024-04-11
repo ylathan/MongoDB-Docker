@@ -21,8 +21,7 @@ cat > docker-compose.yml
 -----------------------------------------------------------------------------------------------------------------------------------------
 Paso 2. Crear la configuracion documento de docker-compose.yml:
 
-version: '2.2'      
-- version del docker compose
+version: '2.2'      - version del docker compose
 
 services:     
 - el servico que queremos configurar en este caso mongo
@@ -60,7 +59,7 @@ touch mongo.sh
 ----------------------------------------------------------------------------------------------------------------------
 Paso 4. Cargar comandos al archivo creado:
 
-#Crear carpeta para volumen de mongo:
+#Crear carpeta para volumen de mongo
 mkdir monguitodata && cd monguitodata; cd monguitodata || mkdir log
 
 - mkdir monguitodata: Intenta crear un directorio llamado monguitodata.
@@ -74,7 +73,6 @@ cd ~
 - Cambia al directorio de inicio del usuario (~ representa el directorio de inicio).--
 
 #Iniciar el contenedor:
-
 sudo docker-compose up -d
 
 - Este comando ejecuta los servicios definidos en el archivo docker-compose.yml utilizando Docker Compose.

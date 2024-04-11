@@ -13,6 +13,7 @@ Uso linux en un entorno virtual(creamos una conexión con virtualbox y ejecutamo
 Paso 1. Crear documento de docker-compose.
 
 touch docker-compose.yml
+
 cat > docker-compose.yml 
 
 - touch sirve para crear el archivo, y el .yml que vienen del YAML crea un formato de serializacion legible para humanos--
@@ -21,9 +22,9 @@ cat > docker-compose.yml
 -----------------------------------------------------------------------------------------------------------------------------------------
 Paso 2. Crear la configuracion documento de docker-compose.yml:
 
-version: '2.2'      - version del docker compose
+version: '2.2'      
 
-services:     - el servico que queremos configurar en este caso mongo
+services:     
 
   mongo:      - nombre del servicio
     image: mongo:4.0.4      - indica que estamos utilizando la imagen oficial de MongoDB versión 4.0.4.
@@ -39,6 +40,9 @@ services:     - el servico que queremos configurar en este caso mongo
     ports:
       - "27017:27017"     - puerto que permite acceder a la base de datos MongoDB desde fuera del contenedor.
       
+    - version del docker compose
+    - el servico que queremos configurar en este caso mongo
+    
 En resumen todo este comando crea el contenedor con usuario y contraseña, monta los volumenes locales para los datos y los registros y expone en puerto 27017 para acceder a la base de datos.
 
 ----------------------------------------------------------------------------------------------------------------------

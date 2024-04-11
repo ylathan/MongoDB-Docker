@@ -68,10 +68,10 @@ Paso 4. Cargar comandos al archivo creado:
 mkdir monguitodata && cd monguitodata; cd monguitodata || mkdir log
 
 - mkdir monguitodata: Intenta crear un directorio llamado monguitodata.
-  &&: Si la creación del directorio anterior tiene éxito, continúa con la siguiente acción.
-  cd monguitodata: Cambia al directorio recién creado llamado monguitodata.
-  ;  Ejecuta la siguiente acción independientemente del resultado de la acción anterior.
-  cd monguitodata || mkdir log: Intenta cambiar al directorio monguitodata. Si no existe, crea un directorio llamado log.
+- &&: Si la creación del directorio anterior tiene éxito, continúa con la siguiente acción.
+- cd monguitodata: Cambia al directorio recién creado llamado monguitodata.
+- ;  Ejecuta la siguiente acción independientemente del resultado de la acción anterior.
+- cd monguitodata || mkdir log: Intenta cambiar al directorio monguitodata. Si no existe, crea un directorio llamado log.
 
 cd ~
 
@@ -82,8 +82,8 @@ cd ~
 sudo docker-compose up -d
 
 - Este comando ejecuta los servicios definidos en el archivo docker-compose.yml utilizando Docker Compose.
-  sudo: se utiliza para ejecutar el comando con privilegios de superusuario.
-  -d: inicia los contenedores en segundo plano (modo desatachado).
+- sudo: se utiliza para ejecutar el comando con privilegios de superusuario.
+- -d: inicia los contenedores en segundo plano (modo desatachado).
 
 El resultado de todo el comando muestra que se está creando una red llamada “ubuntu_default”(en mi caso la red se llama ubuntu) y se está descargando la imagen de MongoDB versión 4.0.4
 
